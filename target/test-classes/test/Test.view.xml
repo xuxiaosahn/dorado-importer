@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model/>
+  <View>
+    <Button>
+      <Property name="caption">导入</Property>
+      <Property name="action">uploadAction</Property>
+    </Button>
+    <UploadAction id="uploadAction">
+      <ClientEvent name="beforeFileUpload">self.set(&quot;parameter&quot;, {
+    importerSolutionId: &quot;002&quot;
+});</ClientEvent>
+      <Property name="fileResolver">importer.excelUploadFileProcessor#upload</Property>
+      <Property name="parameter">
+        <Entity>
+          <Property name="importerSolutionId">002</Property>
+        </Entity>
+      </Property>
+      <Filters/>
+    </UploadAction>
+  </View>
+</ViewConfig>
